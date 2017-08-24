@@ -1,0 +1,37 @@
+#! /usr/bin/env bash
+
+git checkout master
+git pull
+
+git gc
+
+# Delete local branches no longer on remotes.
+git remote | while read remote; do
+  git remote prune $remote
+done
+
+# Delete all merged branches.
+git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+
+# For unmerged branches, interactively query for deletion.
+branches=$(git branch | grep -v "\*")
+
+for branch in $branches; do
+  echo -e "Branch: \\033[0;32m$branch\\033[0m"
+  echo
+
+  git cherry -v master "$branch"
+
+  echo
+  echo -n "Delete branch? [y/N] "
+
+  read -n 1 answer
+
+  echo
+
+  if [[ $answer == y ]]; then
+    git branch -D "$branch"
+  fi
+
+  echo
+done
