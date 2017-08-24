@@ -9,6 +9,17 @@ Cleans up your local Git directory.
 - Optimizes disk space and performance.
 
 
+Usage
+-----
+
+```
+$ cd path/to/repo
+$ git spring-cleaning
+```
+
+[![asciicast](https://asciinema.org/a/IwumJagfkYe81f54SrlXHgcq8.png)](https://asciinema.org/a/IwumJagfkYe81f54SrlXHgcq8)
+
+
 Contributing
 ------------
 
