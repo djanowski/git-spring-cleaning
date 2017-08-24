@@ -17,7 +17,7 @@ $ cd path/to/repo
 $ git spring-cleaning
 ```
 
-[![asciicast](https://asciinema.org/a/IwumJagfkYe81f54SrlXHgcq8.png)](https://asciinema.org/a/IwumJagfkYe81f54SrlXHgcq8)
+![](https://rawgithub.com/djanowski/git-spring-cleaning/master/screencast.gif)
 
 
 Contributing
